@@ -4,6 +4,8 @@
   "compilerOptions": {
     "declarationMap": false,
     "sourceMap": false,
-    
-  }
+  },
+  "references": [
+    { "path": "../../packages/lib-ui/tsconfig.build.json" }
+  ]
 }
