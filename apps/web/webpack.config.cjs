@@ -11,6 +11,8 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 
 function transformSharedToDefine(shared) {
 	const result = {}
@@ -83,6 +85,14 @@ function buildConfig(argv) {
 						}
 					}
 				},
+				{
+					test: /\.css$/i,
+					use: [
+						prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
+						'css-loader',
+						'postcss-loader'
+					]
+				}
 			]
 		},
 		resolve: {
@@ -95,6 +105,7 @@ function buildConfig(argv) {
 		},
 		plugins: [
 			...plugins,
+			new MiniCssExtractPlugin(),
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, './src/index.html'),
 				templateParameters: sharedEnv,

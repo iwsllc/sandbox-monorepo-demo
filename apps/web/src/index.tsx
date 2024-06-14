@@ -1,11 +1,14 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import './stylesheets/index.css'
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 )
 root.render(
 	<StrictMode>
-		<span>hello world</span>
+		<div className="p-5">
+			<h1 className="font-light text-3xl leading-9">Hello world</h1>
+		</div>
 	</StrictMode>
 )
