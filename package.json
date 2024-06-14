@@ -11,7 +11,8 @@
   "license": "ISC",
   "workspaces": [
     "apps/app",
-    "packages/lib-main"
+    "packages/lib-main",
+    "apps/web"
   ],
   "devDependencies": {
     "typescript": "^5.4.5"
