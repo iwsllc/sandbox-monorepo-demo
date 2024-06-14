@@ -1,0 +1,19 @@
+{
+  "name": "@potatoes/root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "build": "tsc --build"
+  },
+  "author": "Nathan Bridgewater",
+  "license": "ISC",
+  "workspaces": [
+    "apps/app",
+    "packages/lib-main"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@potatoes/app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.mjs",
+    "prebuild": "npm run clean",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "tsc --build tsconfig.build.json --clean",
+    "postclean": "rimraf dist"
+  },
+  "author": "Nathan Bridgewater",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.10",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
+  }
+}

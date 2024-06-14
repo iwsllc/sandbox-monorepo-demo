@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"strict": true,
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"resolveJsonModule": true,
+		"noImplicitAny": true,
+		"moduleResolution": "nodenext",
+		"module": "NodeNext",
+		"lib": [ "esnext" ],
+		"incremental": true,
+		"forceConsistentCasingInFileNames": true,
+		"esModuleInterop": true,
+		"declarationMap": true,
+		"declaration": true,
+		"composite": true,
+		"allowJs": false,
+	}
+}

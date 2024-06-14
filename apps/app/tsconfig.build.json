@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["**/*.test.*", "**/__tests__/*", "**/__mocks__/*"],
+  "compilerOptions": {
+    "declarationMap": false,
+    "sourceMap": false,
+  },
+  "references": [
+    {
+      "path": "../../packages/lib-main/tsconfig.build.json"
+    }
+  ]
+}
