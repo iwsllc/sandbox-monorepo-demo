@@ -12,7 +12,8 @@
   "workspaces": [
     "apps/app",
     "packages/lib-main",
-    "apps/web"
+    "apps/web",
+    "packages/lib-ui"
   ],
   "devDependencies": {
     "typescript": "^5.4.5"
