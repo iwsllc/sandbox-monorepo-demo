@@ -28,7 +28,7 @@
   },
   "scripts": {
     "clean": "npx tsc --build --clean tsconfig.build.json",
-    "postclean": "rimraf public",
+    "postclean": "rimraf dist",
     "build": "GITHUB_SHA=`git rev-parse HEAD` webpack --config webpack.config.cjs --mode production",
     "postbuild": "cp -R public/. dist/",
     "start": "webpack serve"
