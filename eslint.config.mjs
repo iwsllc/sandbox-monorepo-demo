@@ -70,6 +70,7 @@ export default [
         ...reactPlugin.configs['jsx-runtime'].rules,
 
         // Overrides and additions
+        'promise/always-return': ['error', { ignoreLastCallback: true }],
 
         '@typescript-eslint/no-unused-vars': ['error', {
           argsIgnorePattern: '^_',
@@ -81,6 +82,7 @@ export default [
         // uncomment for tabs instead of spaces
         // '@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
         // '@stylistic/indent': ['error', 'tab'],
+        // '@stylistic/indent-binary-ops': ['error', 'tab'],
         // '@stylistic/jsx-indent': ['error', 'tab'],
         // '@stylistic/jsx-indent-props': ['error', 'tab'],
       },
