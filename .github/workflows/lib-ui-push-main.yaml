@@ -1,0 +1,49 @@
+name: "@potatoes/lib-ui: PUSH to main"
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'packages/lib-ui/**'
+      - '.github/workflows/lib-ui-push-main.yaml'
+
+jobs:
+  tests:
+    if: ${{ !contains(github.event.head_commit.message, '#skip') }}
+    uses: iwsllc/workflows/.github/workflows/test.yaml@main
+    with:
+      node_registry_url: 'https://npm.pkg.github.com'
+      node_scope: '@potatoes'
+      node_cache: 'npm'
+      install_command: 'npm ci -w packages/lib-ui'
+      test_command: 'npm run test -w packages/lib-ui'
+    # if you need private npm access, uncomment the following line and swap in your token secret
+    # secrets:
+    #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  version:
+    needs: tests
+    uses: iwsllc/workflows/.github/workflows/version.yaml@main
+    with:
+      git_ref_name: main
+      node_registry_url: 'https://npm.pkg.github.com'
+      node_version: 22
+      node_scope: '@potatoes'
+      version_command: npm version patch -w packages/lib-ui
+      version_workspace: packages/lib-ui
+      tag_include_name: true
+    # secrets:
+    #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    needs: version
+    uses: iwsllc/workflows/.github/workflows/publish.yaml@main
+    with:
+      git_ref_name: main
+      node_registry_url: 'https://npm.pkg.github.com'
+      node_scope: '@potatoes'
+      node_cache: 'npm'
+      install_command: 'npm ci'
+      build_command: 'npm run build -w packages/lib-ui'
+      publish_command: 'npm publish -w packages/lib-ui --access public'
+    secrets:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
