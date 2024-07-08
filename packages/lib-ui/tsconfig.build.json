@@ -3,7 +3,7 @@
   "exclude": ["**/*.test.*", "**/__tests__/*", "**/__mocks__/*"],
   "compilerOptions": {
     "declarationMap": false,
-    "sourceMap": false,
-    
+    "sourceMap": true,
+    "inlineSources": true
   }
 }

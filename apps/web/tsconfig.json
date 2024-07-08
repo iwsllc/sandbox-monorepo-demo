@@ -8,6 +8,6 @@
     "src/**/*"
   ],
   "references": [
-    { "path": "../../packages/lib-ui/tsconfig.build.json" }
+    { "path": "../../packages/lib-ui" }
   ]
 }

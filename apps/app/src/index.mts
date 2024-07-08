@@ -1,3 +1,7 @@
 import { work } from './work.mjs'
 
-console.log(work())
+export async function main() {
+  console.log(work())
+}
+
+main()
