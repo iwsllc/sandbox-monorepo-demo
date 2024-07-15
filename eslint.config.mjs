@@ -11,7 +11,7 @@ import globals from 'globals'
  */
 const monoRepoPackages = [
   '@potatoes/lib-main',
-  '@potatoes/lib-ui',
+  '@potatoes/lib-ui'
 ]
 
 /**
@@ -20,15 +20,18 @@ const monoRepoPackages = [
  */
 const monoRepoNodeProjects = [
   'apps/app',
-  'packages/lib-main',
+  'packages/lib-main'
 ]
 
+/**
+ * And here's the actual configuration.
+ */
 export default [
   ...tseslint.config(
 
     // global ignores have a single prop `ignores`
     {
-      ignores: ['**/node_modules/*', '**/dist/'], // global ignore with single ignore key
+      ignores: ['**/node_modules/*', '**/dist/'] // global ignore with single ignore key
     },
 
     // applies to all files: Core ES Rules
@@ -38,13 +41,25 @@ export default [
     ...tseslint.configs.recommended,
 
     /**
+     * Stylistic rules factory. This generates styling rules with a few options.
+     * For details, see: https://eslint.style/guide/config-presets#configuration-factory
+     * For options, see: https://github.com/eslint-stylistic/eslint-stylistic/blob/main/packages/eslint-plugin/configs/customize.ts
+     **/
+    stylistic.configs.customize({
+      braceStyle: '1tbs',
+      commaDangle: 'never',
+      indent: 2, // for tabs, use "tab"
+      jsx: true,
+      quotes: 'single',
+      semi: false
+    }),
+    /**
      * Applies to all files: Additional plugins like: promise, stylistic, and react
      */
     {
       plugins: {
-        'promise': promisePlugin,
-        '@stylistic': stylistic,
-        'react': reactPlugin,
+        promise: promisePlugin,
+        react: reactPlugin
       },
       languageOptions: {
         ecmaVersion: 2023, // Targeted ES
@@ -56,8 +71,8 @@ export default [
         globals: {
           ...globals.browser,
           ...globals.node,
-          ...globals.es2023,
-        },
+          ...globals.es2023
+        }
       },
 
       /**
@@ -65,52 +80,44 @@ export default [
       */
       rules: {
         ...promisePlugin.configs.recommended.rules,
-        ...stylistic.configs['recommended-flat'].rules,
         ...reactPlugin.configs.recommended.rules,
         ...reactPlugin.configs['jsx-runtime'].rules,
 
         // Overrides and additions
         'promise/always-return': ['error', { ignoreLastCallback: true }],
 
+        // enable underscore ignore pattern for unused vars
         '@typescript-eslint/no-unused-vars': ['error', {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           destructuredArrayIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-        }],
-
-        // uncomment for tabs instead of spaces
-        // '@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
-        // '@stylistic/indent': ['error', 'tab'],
-        // '@stylistic/indent-binary-ops': ['error', 'tab'],
-        // '@stylistic/jsx-indent': ['error', 'tab'],
-        // '@stylistic/jsx-indent-props': ['error', 'tab'],
+          caughtErrorsIgnorePattern: '^_'
+        }]
       },
 
       settings: {
         react: {
-          version: 'detect', // You can add this if you get a warning about the React version when you lint
-        },
-      },
+          version: 'detect' // You can add this if you get a warning about the React version when you lint
+        }
+      }
     },
 
     // applies to only Node project files referenced above.
     {
       // Node rules
       files: monoRepoNodeProjects.map(path => `${path}/**/*`),
-      // files: [],
 
       plugins: {
-        n: nodePlugin,
+        n: nodePlugin
       },
 
       rules: {
         ...nodePlugin.configs['flat/recommended'].rules,
 
         'n/no-extraneous-import': ['error', {
-          allowModules: [...monoRepoPackages],
-        }],
-      },
-    },
-  ),
+          allowModules: [...monoRepoPackages]
+        }]
+      }
+    }
+  )
 ]

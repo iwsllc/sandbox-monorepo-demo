@@ -30,7 +30,7 @@ function buildConfig(argv) {
   const sharedEnv = {
     PUBLIC_URL: process.env.PUBLIC_URL || '/',
     VERSION: require('./package.json').version,
-    VERSION_HASH: process.env.GITHUB_SHA?.substring(0, 7), // This is just sugar. Meant to be read from env in case CI checkout folder has no git-history.
+    VERSION_HASH: process.env.GITHUB_SHA?.substring(0, 7) // This is just sugar. Meant to be read from env in case CI checkout folder has no git-history.
   }
 
   let devtool, plugins = [], sourceMapLoader
@@ -39,38 +39,37 @@ function buildConfig(argv) {
     sourceMapLoader = {
       test: /\.(m|c){0,1}js$/,
       enforce: 'pre',
-      use: ['source-map-loader'],
+      use: ['source-map-loader']
     }
-  }
-  else {
+  } else {
     if (!CI) { // no bundle analyzer for a CI build
       plugins = [new BundleAnalyzerPlugin({
         openAnalyzer: false,
-        analyzerMode: 'static',
+        analyzerMode: 'static'
       })]
     }
   }
 
   const config = {
     entry: {
-      app: './src/index',
+      app: './src/index'
     },
     mode,
     ...({ devtool }),
     optimization: {
       minimize: prodMode,
       usedExports: true,
-      minimizer: [new TerserPlugin()],
+      minimizer: [new TerserPlugin()]
     },
     devServer: {
       hot: !prodMode,
       historyApiFallback: true,
       host: '0.0.0.0',
       static: {
-        directory: path.join(__dirname, 'public'),
+        directory: path.join(__dirname, 'public')
       },
       compress: true,
-      port: process.env.PORT || 3000,
+      port: process.env.PORT || 3000
     },
     module: {
       rules: [
@@ -81,27 +80,27 @@ function buildConfig(argv) {
             loader: 'ts-loader',
             options: {
               configFile: 'tsconfig.build.json',
-              projectReferences: true,
-            },
-          },
+              projectReferences: true
+            }
+          }
         },
         {
           test: /\.css$/i,
           use: [
             prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
-            'postcss-loader',
-          ],
-        },
-      ],
+            'postcss-loader'
+          ]
+        }
+      ]
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.jsx', '.js', '.json', '.cjs', '.mjs', '.mts', '.cts'],
       extensionAlias: {
         '.js': ['.js', '.jsx', '.ts', '.tsx'],
         '.cjs': ['.cjs', '.cts'],
-        '.mjs': ['.mjs', '.mts'],
-      },
+        '.mjs': ['.mjs', '.mts']
+      }
     },
     plugins: [
       ...plugins,
@@ -109,16 +108,16 @@ function buildConfig(argv) {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, './src/index.html'),
         templateParameters: sharedEnv,
-        hash: true,
+        hash: true
       }),
-      new webpack.DefinePlugin(transformSharedToDefine(sharedEnv)),
+      new webpack.DefinePlugin(transformSharedToDefine(sharedEnv))
     ],
     output: {
       filename: '[name]-[fullhash].bundle.js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
-      publicPath: sharedEnv.PUBLIC_URL,
-    },
+      publicPath: sharedEnv.PUBLIC_URL
+    }
   }
   if (sourceMapLoader) config.module.rules.push(sourceMapLoader)
   return config

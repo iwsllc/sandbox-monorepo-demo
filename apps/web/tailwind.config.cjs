@@ -3,6 +3,6 @@
 module.exports = {
   mode: 'jit',
   content: [
-    './src/**/*.{js,jsx,ts,tsx,mts}',
-  ],
+    './src/**/*.{js,jsx,ts,tsx,mts}'
+  ]
 }

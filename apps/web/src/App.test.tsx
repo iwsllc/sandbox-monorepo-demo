@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { App } from './App.js'
 
 vi.mock('@potatoes/lib-ui', () => ({
-  SimpleComponent: () => <span data-testid="simple" />,
+  SimpleComponent: () => <span data-testid="simple" />
 }))
 
 describe('App', () => {

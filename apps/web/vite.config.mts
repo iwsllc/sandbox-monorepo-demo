@@ -7,6 +7,6 @@ export default defineConfig({
     globals: true,
     mockReset: true,
     environment: 'jsdom',
-    setupFiles: ['./setupTests'],
-  },
+    setupFiles: ['./setupTests']
+  }
 })
