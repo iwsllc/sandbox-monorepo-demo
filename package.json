@@ -16,14 +16,14 @@
     "packages/lib-ui"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.5.0",
-    "@stylistic/eslint-plugin": "^2.2.2",
+    "@eslint/js": "^9.8.0",
+    "@stylistic/eslint-plugin": "^2.4.0",
     "eslint": "^8.57.0",
-    "eslint-plugin-n": "^17.9.0",
-    "eslint-plugin-promise": "^6.2.0",
-    "eslint-plugin-react": "^7.34.2",
-    "globals": "^15.6.0",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.13.1"
+    "eslint-plugin-n": "^17.10.1",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.8.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.17.0"
   }
 }
