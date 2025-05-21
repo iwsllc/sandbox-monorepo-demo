@@ -20,13 +20,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/react": "^19.1.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
+    "jsdom": "^26.1.0",
     "react": "^19.1.0",
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/react": "^16.0.0",
-    "@testing-library/user-event": "^14.5.2",
-    "jsdom": "^24.1.0",
-    "vitest": "^1.6.0"
+    "vitest": "^3.1.4"
   }
 }
