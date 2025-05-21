@@ -16,6 +16,7 @@
     "packages/lib-ui"
   ],
   "devDependencies": {
+    "typescript": "^5.8.3",
     "@eslint/js": "^9.5.0",
     "@stylistic/eslint-plugin": "^2.2.2",
     "eslint": "^8.57.0",
@@ -23,7 +24,6 @@
     "eslint-plugin-promise": "^6.2.0",
     "eslint-plugin-react": "^7.34.2",
     "globals": "^15.6.0",
-    "typescript": "^5.4.5",
     "typescript-eslint": "^7.13.1"
   }
 }

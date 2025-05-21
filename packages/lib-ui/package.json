@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js"
+    ".": "./src/index.js",
+    "./*": "./src/*.js"
   },
   "files": [
     "dist"
@@ -20,11 +20,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "react": "^19.1.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "jsdom": "^24.1.0",
-    "react": "^18.3.1",
     "vitest": "^1.6.0"
   }
 }
