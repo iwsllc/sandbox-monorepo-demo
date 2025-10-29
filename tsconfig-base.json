@@ -7,7 +7,7 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"incremental": true,
-		"lib": ["ES2023"],
+		"lib": ["ES2023", "DOM"],
 		"module": "NodeNext",
 		"moduleResolution": "nodenext",
 		"noImplicitAny": true,
