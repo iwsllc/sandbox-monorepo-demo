@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
 	"extends": ["@iwsio/biome-config/biome"],
 	"vcs": {
 		"enabled": true,
@@ -8,7 +8,7 @@
 	},
 	"overrides": [
 		{
-			"includes": ["tools/**", "packages/server-lib/**", "packages/docs-ui/scripts/**"],
+			"includes": ["apps/app/**"],
 			"linter": {
 				"rules": {
 					"suspicious": {
@@ -24,14 +24,11 @@
 			"!**/node_modules",
 			"!**/dist",
 			"!**/precompiled",
-			"!packages/docs-ui/src/generated",
-			"!**/migrations",
 			"!**/coverage",
 			"!**/.tanstack",
 			"!**/*.tsbuildinfo",
 			"!**/*.gen.ts",
-			"!**/pnpm-lock.yaml",
-			"!docs/hosting-decision.html"
+			"!**/pnpm-lock.yaml"
 		]
 	}
 }
