@@ -1,0 +1,37 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+	"extends": ["@iwsio/biome-config/biome"],
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"overrides": [
+		{
+			"includes": ["tools/**", "packages/server-lib/**", "packages/docs-ui/scripts/**"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noConsole": "off"
+					}
+				}
+			}
+		}
+	],
+	"files": {
+		"includes": [
+			"**",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/precompiled",
+			"!packages/docs-ui/src/generated",
+			"!**/migrations",
+			"!**/coverage",
+			"!**/.tanstack",
+			"!**/*.tsbuildinfo",
+			"!**/*.gen.ts",
+			"!**/pnpm-lock.yaml",
+			"!docs/hosting-decision.html"
+		]
+	}
+}

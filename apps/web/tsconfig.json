@@ -1,13 +1,12 @@
 {
-  "extends": "../../tsconfig-react.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "references": [
-    { "path": "../../packages/lib-ui/tsconfig.build.json" }
-  ]
+	"extends": "../../tsconfig-base-react.json",
+	"include": ["src"],
+
+	"compilerOptions": {
+		/* Bundler mode */
+		"noEmit": true,
+		"module": "ES2022",
+		"moduleResolution": "bundler"
+	},
+	"references": [{ "path": "../../packages/lib-ui/tsconfig.build.json" }]
 }

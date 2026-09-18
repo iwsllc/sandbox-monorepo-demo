@@ -1,22 +1,30 @@
 {
-  "name": "@potatoes/root",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "clean": "tsc --build --clean",
-    "build": "tsc --build"
-  },
-  "author": "Nathan Bridgewater",
-  "license": "ISC",
-  "workspaces": [
-    "apps/app",
-    "packages/lib-main",
-    "apps/web",
-    "packages/lib-ui"
-  ],
-  "devDependencies": {
-    "@iwsio/eslint-config": "^2.0.0",
-    "typescript": "^5.9.3"
-  }
+	"name": "@potatoes/root",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "del-cli '**/dist' '**/*.tsbuildinfo'",
+		"build": "tsc --build",
+		"format": "biome format .",
+		"format:fix": "biome format --write .",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"lint:fix:unsafe": "biome check --write --unsafe ."
+	},
+	"author": "Nathan Bridgewater",
+	"license": "ISC",
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"tools/*"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.14",
+		"@iwsio/biome-config": "^1.0.1",
+		"@iwsio/tsconfig": "^1.0.3",
+		"del-cli": "^7.0.0",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.1"
+	}
 }

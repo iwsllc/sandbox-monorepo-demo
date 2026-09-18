@@ -1,8 +1,4 @@
 {
-  "extends": "./tsconfig.json",
-  "exclude": ["**/*.test.*", "**/__tests__/*", "**/__mocks__/*"],
-  "compilerOptions": {
-    "declarationMap": false,
-    "sourceMap": false,
-  }
+	"extends": "./tsconfig.json",
+	"exclude": ["node_modules", "**/*.test.mts", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/*", "**/__mocks__/*"]
 }
