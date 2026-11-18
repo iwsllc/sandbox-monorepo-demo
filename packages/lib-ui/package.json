@@ -3,12 +3,9 @@
 	"version": "1.0.1",
 	"type": "module",
 	"exports": {
-		".": "./src/index.js",
-		"./*": "./src/*.js"
+		".": "./src/index.tsx",
+		"./*": "./src/*.tsx"
 	},
-	"files": [
-		"dist"
-	],
 	"scripts": {
 		"build": "tsc --build tsconfig.build.json",
 		"clean": "del-cli dist '*.tsbuildinfo'",
@@ -25,6 +22,8 @@
 		"del-cli": "^8.0.1",
 		"happy-dom": "^21.0.4",
 		"react": "^19.3.1",
+		"react-dom": "^19.3.1",
+		"typescript": "^7.0.2",
 		"vitest": "^5.1.0"
 	}
 }
