@@ -1,0 +1,23 @@
+{
+  "name": "@potatoes/lib-ui",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.tsx",
+    "./*": "./src/*.tsx"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "del-cli dist '*.tsbuildinfo'"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "del-cli": "^8.0.1",
+    "react": "^19.3.1",
+    "typescript": "^7.0.2"
+  }
+}

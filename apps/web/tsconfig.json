@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig-react.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "references": [
+    { "path": "../../packages/lib-ui/tsconfig.build.json" }
+  ]
+}

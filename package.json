@@ -8,7 +8,8 @@
     "clean": "del-cli '**/dist' '**/*.tsbuildinfo'",
     "build": "tsc --build",
     "dev": "pnpm run \"/^watch:.*$/\"",
-    "watch:ts": "tsc --build --watch"
+    "watch:ts": "tsc --build --watch",
+    "watch:web": "pnpm -F web start"
   },
   "keywords": [],
   "author": "",
