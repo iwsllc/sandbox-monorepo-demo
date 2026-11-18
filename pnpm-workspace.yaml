@@ -1,18 +1,17 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
-  - 'tools/*'
+  - "apps/*"
+  - "packages/*"
 
 # Collapse packages that would otherwise be installed more than once because their
 # optional peers resolve differently per consumer.
-#
 dedupePeerDependents: true
 
-allowBuilds:
-  bcrypt: true
-  esbuild: true
-  unrs-resolver: true
+# Give a project an optional peer only when its own dependencies install it. Without this,
+# vitest's optional jsdom peer lands in every project even though only happy-dom is used.
+projectScopedOptionalPeers: true
 
+# minimumReleaseAge (default 1440 minutes) delays installing newly published versions.
+# Our own scopes are published from protected pipelines, so they skip the delay.
 minimumReleaseAgeExclude:
   - pnpm
-  - '@iwsio/*'
+  - "@iwsio/*"
