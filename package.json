@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.6.8",
 		"@iwsio/biome-config": "^1.0.3",
-		"@iwsio/tsconfig": "^1.0.3",
+		"@iwsio/tsconfig": "^1.0.4",
 		"del-cli": "^8.0.1",
 		"typescript": "^7.0.2",
 		"vitest": "^5.1.0"
