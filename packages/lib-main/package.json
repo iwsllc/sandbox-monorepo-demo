@@ -1,26 +1,30 @@
 {
-  "name": "@potatoes/lib-main",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build tsconfig.build.json",
-    "clean": "del-cli dist '*.tsbuildinfo'"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "files": [
-    "./dist"
-  ],
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./*": "./dist/*.mjs"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.6",
-    "del-cli": "^8.0.1",
-    "typescript": "^7.0.2"
-  }
+	"name": "@potatoes/lib-main",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"test": "vitest --run",
+		"build": "tsc --build tsconfig.build.json",
+		"clean": "del-cli dist '*.tsbuildinfo'"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"files": [
+		"./dist"
+	],
+	"exports": {
+		".": "./dist/index.mjs",
+		"./*": "./dist/*.mjs"
+	},
+	"devDependencies": {
+		"@types/node": "^26.6.6",
+		"del-cli": "^8.0.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.1.0"
+	},
+	"engines": {
+		"node": ">=26"
+	}
 }

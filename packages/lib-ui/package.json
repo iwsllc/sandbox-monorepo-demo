@@ -1,23 +1,28 @@
 {
-  "name": "@potatoes/lib-ui",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.tsx",
-    "./*": "./src/*.tsx"
-  },
-  "scripts": {
-    "build": "tsc --build tsconfig.build.json",
-    "clean": "del-cli dist '*.tsbuildinfo'"
-  },
-  "devDependencies": {
-    "@types/react": "^19.3.0",
-    "del-cli": "^8.0.1",
-    "react": "^19.3.1",
-    "typescript": "^7.0.2"
-  }
+	"name": "@potatoes/lib-ui",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"exports": {
+		".": "./src/index.tsx",
+		"./*": "./src/*.tsx"
+	},
+	"scripts": {
+		"build": "tsc --build tsconfig.build.json",
+		"clean": "del-cli dist '*.tsbuildinfo'",
+		"test": "vitest --run"
+	},
+	"devDependencies": {
+		"@testing-library/react": "^16.3.3",
+		"@testing-library/user-event": "^14.6.12",
+		"@types/react": "^19.3.0",
+		"del-cli": "^8.0.1",
+		"happy-dom": "^21.0.4",
+		"react": "^19.3.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.1.0"
+	}
 }

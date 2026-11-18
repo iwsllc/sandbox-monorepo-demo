@@ -5,3 +5,5 @@ packages:
 minimumReleaseAgeExclude:
   - pnpm
   - "@iwsio/*"
+
+projectScopedOptionalPeers: true

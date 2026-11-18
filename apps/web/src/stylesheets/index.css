@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* For this solution; our ui package should also be included in sources. (Use relative paths) */
 @source "../../../../packages/lib-ui";

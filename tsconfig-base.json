@@ -9,7 +9,7 @@
 		"noImplicitAny": true,
 		"moduleResolution": "nodenext",
 		"module": "NodeNext",
-		"lib": [ "es2023" ],
+		"lib": ["es2023"],
 		"incremental": true,
 		"forceConsistentCasingInFileNames": true,
 		"esModuleInterop": true,
@@ -17,6 +17,6 @@
 		"declaration": true,
 		"composite": true,
 		"allowJs": false,
-		"types": ["node"]
+		"types": ["vitest/globals", "node"]
 	}
 }
