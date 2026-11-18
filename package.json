@@ -6,6 +6,9 @@
 	"scripts": {
 		"clean": "del-cli '**/dist' '**/*.tsbuildinfo'",
 		"build": "tsc --build",
+		"dev": "pnpm run \"/^watch:.*$/\"",
+		"watch:ts": "tsc --build --watch",
+		"watch:web": "pnpm -F web start",
 		"format": "biome format .",
 		"format:fix": "biome format --write .",
 		"lint": "biome check .",
@@ -19,7 +22,7 @@
 		"@biomejs/biome": "^2.6.8",
 		"@iwsio/biome-config": "^1.0.3",
 		"@iwsio/tsconfig": "^1.0.3",
-		"del-cli": "^7.0.0",
+		"del-cli": "^8.0.1",
 		"typescript": "^7.0.2",
 		"vitest": "^5.1.0"
 	},
