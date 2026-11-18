@@ -1,30 +1,29 @@
 {
-	"name": "@potatoes/root",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"clean": "del-cli '**/dist' '**/*.tsbuildinfo'",
-		"build": "tsc --build",
-		"dev": "pnpm run \"/^watch:.*$/\"",
-		"watch:ts": "tsc --build --watch",
-		"watch:web": "pnpm -F web start",
-		"format": "biome format .",
-		"format:fix": "biome format --write .",
-		"lint": "biome check .",
-		"lint:fix": "biome check --write .",
-		"lint:fix:unsafe": "biome check --write --unsafe .",
-		"test": "vitest --run"
-	},
-	"author": "Nathan Bridgewater",
-	"license": "ISC",
-	"devDependencies": {
-		"@biomejs/biome": "^2.6.8",
-		"@iwsio/biome-config": "^1.0.3",
-		"@iwsio/tsconfig": "^1.0.4",
-		"del-cli": "^8.0.1",
-		"typescript": "^7.0.2",
-		"vitest": "^5.1.0"
-	},
-	"packageManager": "pnpm@12.21.0"
+  "name": "@potatoes/root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "del-cli '**/dist' '**/*.tsbuildinfo'",
+    "build": "tsc --build",
+    "dev": "pnpm run \"/^watch:.*$/\"",
+    "watch:ts": "tsc --build --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.21.0",
+  "type": "module",
+  "devDependencies": {
+    "del-cli": "^8.0.1",
+    "typescript": "^7.0.2"
+  }
 }
